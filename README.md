@@ -9,3 +9,8 @@ dCardCrawl(number,title)
   像是美妝：https://www.dcard.tw/f/makeup
   所以title就知道要輸入makeup
   假如說要抓前1000筆makeup板文章，dCardCrawl(1000,"makeup")
+
+```
+PTTCrawler(number,title) 
+```
+  用法與dcard相同，也要打英文板名，記得大小寫
