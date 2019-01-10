@@ -1,5 +1,5 @@
 import requests, json
-def dCardCrawl(number,title): ##輸入要爬的文章數目與板名（會依時間順序爬最新的） 回傳一個list，每個element裝一個文章的字串（不包含評論，如果有要抓評論再說）
+def DcardCrawler(number,title): ##輸入要爬的文章數目與板名（會依時間順序爬最新的） 回傳一個list，每個element裝一個文章的字串（不包含評論，如果有要抓評論再說）
     pages = int(number/30)
     header1={'User-Agent': 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_7; da-dk) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1'}#要把身份設成browser不然不給爬
     Url="https://dcard.tw/_api/forums/"+title+"/posts?popular=false&" ##爬文章編號
