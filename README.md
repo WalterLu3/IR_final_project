@@ -2,7 +2,7 @@
 
 用法：
 ```
-dCardCrawl(number,title) 
+DcardCrawler(number,title) 
 ```
  number文章數量，title板名，會抓下"title"版名的最新number個數量。
  title名稱就去dcard網頁，隨便點一個板，就會看到他的英文網址，裡面有title。
