@@ -14,7 +14,7 @@ def PttCrawler(number,title):
     CrawPost=number
     
     def PostHandler(Post):
-    globalDoc.append(Post.getContent())
+        globalDoc.append(Post.getContent())
     
     ErrCode, NewestIndex = PTTBot.getNewestIndex(Board=title)
     ErrCode, SuccessCount, DeleteCount = PTTBot.crawlBoard(title, PostHandler, StartIndex=NewestIndex - CrawPost + 1, EndIndex=NewestIndex)
