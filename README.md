@@ -9,6 +9,7 @@ DcardCrawler(number,title)
  像是美妝：https://www.dcard.tw/f/makeup
  所以title就知道要輸入makeup
  假如說要抓前1000筆makeup板文章，DcardCrawler(1000,"makeup")
+ 會直接在資料夾底下創出dill檔案
 
 ```
 PTTCrawler(number,title) 
