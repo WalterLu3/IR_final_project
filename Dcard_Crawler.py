@@ -1,4 +1,4 @@
-import requests, json,dill
+import requests, json,dill,sys
 def DcardCrawler(number,title): ##輸入要爬的文章數目與板名（會依時間順序爬最新的） 回傳一個list，每個element裝一個文章的字串（不包含評論，如果有要抓評論再說）
     pages = int(number/30)
     header1={'User-Agent': 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_7; da-dk) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1'}#要把身份設成browser不然不給爬
@@ -8,6 +8,7 @@ def DcardCrawler(number,title): ##輸入要爬的文章數目與板名（會依�
     allDocument=[]##最後會裝document
     comment=[]
     title2=[]
+
     for i in range(pages):##爬編號
         if (i==0):
             inputUrl=Url
@@ -16,7 +17,12 @@ def DcardCrawler(number,title): ##輸入要爬的文章數目與板名（會依�
         a=requests.get(inputUrl,headers=header1)
         reqsjson = json.loads(a.text)
         for j in range(30):
-            docId.append(reqsjson[j]["id"]) 
+            try:
+                docId.append(reqsjson[j]["id"])
+            except IndexError:
+                print("這個版最多只有"+str(i*30+j)+"篇文章，請重新輸入number")
+                sys.exit()
+                
     
     if pages>1 :
         inputUrl=Url+"before="+str(docId[-1])
@@ -57,4 +63,4 @@ def DcardCrawler(number,title): ##輸入要爬的文章數目與板名（會依�
     with open (title+"_comment_Dcard",'wb') as file:
         dill.dump(comment,file)
         
-    return(allDocument)
+    return(0)
