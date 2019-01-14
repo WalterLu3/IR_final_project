@@ -21,7 +21,6 @@ for i in range(0,10):
 	file = open( Pttboard[i] + "_comment_Ptt_c",'rb')
 	Ptt_comment = dill.load(file)
 	content = []
-	print(content)
 	print("Start title doc content")
 	for j in range(0,len(Ptt_doc)):
 		content.extend(Ptt_title[j])
