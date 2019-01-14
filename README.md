@@ -24,4 +24,4 @@ pip install PTTLibrary
   clustering.py
   V是全20000篇標題+文章+留言的集合
   Cluster總共有20個，前面i = 0-9是ptt看板，後面10-19是Dcard看板，順序寫在code裡面。
-  要跑哪一個看板從第49行裡面i loop裡面改數字。
+  要跑哪一個看板從第55行裡面i loop裡面改數字。
